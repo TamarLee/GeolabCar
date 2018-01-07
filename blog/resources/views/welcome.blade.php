@@ -99,6 +99,7 @@
           <div class="col-md-8">
             <h2 class="text-uppercase jk pt-5">get in touch</h2>
           <form class="p-5" action="{{ url('/') }}" method="POST">
+            {{ csrf_field() }}
             <div class="row">
               <div class="col-md-6">
 
@@ -114,6 +115,7 @@
 
               </div>
               <div class="col-md-6">
+            
           <div class="d-inline pr-4">
             <input type="radio" id="radio" name="optradio">
             <label for="radio" class="px-2">&nbsp;&nbsp;male</label>

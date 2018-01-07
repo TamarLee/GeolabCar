@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Order;
-use App\Mail\OrderShipped;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Controllers\Controller;
 
@@ -33,19 +31,28 @@ class MainController extends Controller
     	]);
     }
 
-    public function postController(Request $request, $orderId){
-        $this->validate($request,[
+    public function postController(Request $request){
+        $this->validate($request, [
             'name' => 'min:3',
             'email' => 'required|email',
             'subject' => 'min:3',
             'textarea' => 'min:5',
-            
+
         ]);
 
-        $order = Order::findOrFail($orderId);
-        Mail::to($request->user())->send(new OrderShipped($order));
+        $data = [
+            'email' => $request->email,
+            'name' => $request->name,
+            'subject' => $request->subject,
+            'textarea' => $request->textarea,
+            'optradio' => $request->optradio,
+        ];
 
-        Mail::send();
+        Mail::send('email', $data, function($massege) use ($data){
+            $massege->from($data['email']);
+            $massege->to('tamar.mekhrishvili@geolab.edu.ge');
+            $massege->subject($data['subject']);
+        });
 
     }
     
