@@ -22,12 +22,7 @@
     <div id="sidebar-wrapper">
             <a id="menu-close" href="" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
         <ul class="sidebar-nav">
-            <li><a href="#home">Home</a>
-            </li>
-            <li><a href="#services">Services</a>
-            </li>
-            <li><a href="#contact">Contact</a>
-            </li>
+            {{ menu('main_menu', 'bootstrap') }}
         </ul>
     </div>
             <a class="navbar-brand" href="#home">AUṪO</a>
