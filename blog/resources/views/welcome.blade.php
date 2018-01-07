@@ -31,26 +31,16 @@
       <div id="main-slider" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
-            <img src="img/slide_04.jpg" class="d-block img-fluid" alt="wq">
+            @foreach ($slider as  $value)
+            <img src="{{$value->image}}" class="d-block img-fluid" alt="wq">
+
             <div class="carousel-caption d-none d-md-block">
-              <h3 class="text-uppercase">27.11.</h3>
-              <p class="">Vintage Auto Exhibition</p>
+              <h3 class="text-uppercase">{{$value->date}}</h3>
+              <p class="">{{$value->description}}</p>
             </div>
+            @endforeach
           </div>
-          <div class="carousel-item">
-            <img src="img/slide_04.jpg" class="d-block img-fluid" alt="wq">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="text-uppercase">27.11.</h3>
-              <p class="">Vintage Auto Exhibition</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="img/slide_04.jpg" class="d-block img-fluid" alt="wq">
-            <div class="carousel-caption d-none d-md-block">
-              <h3 class="text-uppercase">27.11.</h3>
-              <p class="">Vintage Auto Exhibition</p>
-            </div>
-          </div>
+          
         </div>
         <a href="#main-slider" class="carousel-control-prev" data-slide="prev">
           <span class="arrow"><img src="img/leftt.png"></span>
@@ -67,28 +57,18 @@
     <section class="new-website py-5 mt-5">
       <h2 class="text-center text-uppercase">the corner garage for collector cars</h2>
     </section>
+
       <div class="row">
+        @foreach($service as $value)
         <div class="col-md-4 col-12 text-center mb-4 mb-md-0">
           <div class="image-links">
-            <img src="img/kluchoki.png" class="image-fluid">
-            <p class="image-info text-uppercase">modify</p>
+            <a href="{{ $value->link }}">
+            <img src="{{ $value->image }}" class="image-fluid">
+            </a>
+            <p class="image-info text-uppercase">{{ $value->title }}</p>
           </div>
         </div>
-
-        <div class="col-md-4 col-12 text-center mb-4 mb-md-0">
-          <div class="image-links">
-            <img src="img/car.png" class="image-fluid">
-            <p class="image-info text-uppercase">buy</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-12 text-center mb-4 mb-md-0">
-          <div class="image-links">
-            <img src="img/gear.png" class="image-fluid">
-            <p class="image-info text-uppercase">repair</p>
-          </div>
-        </div>
-
+        @endforeach
       </div>
     </div>
         <img src="img/road.png" alt="" width="100%">

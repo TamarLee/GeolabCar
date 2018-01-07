@@ -21,6 +21,9 @@ h3 span{
 }
 
 /* Side Menu */
+.redColor {
+	color: red;
+}
 .rellax{
 	position: absolute;
 	z-index: 1001;
