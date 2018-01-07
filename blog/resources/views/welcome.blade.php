@@ -40,7 +40,7 @@
             </div>
             @endforeach
           </div>
-          
+
         </div>
         <a href="#main-slider" class="carousel-control-prev" data-slide="prev">
           <span class="arrow"><img src="img/leftt.png"></span>
@@ -89,9 +89,10 @@
             <div class="socials text-center">
             <h3 class="jk text-center">click to <section class="d-block">view</section></h3>
               <ul class="">
-              <li><a href="#" class="fa fa-google-plus"></a></li>
-              <li><a href="#" class="fa fa-facebook"></a></li>
-              <li><a href="#" class="fa fa-twitter"></a></li>
+                @foreach($social as $value)
+                  <li><a href="{{ $value->link }}" class="{{ $value->title }}">
+                  </a></li>
+                @endforeach
             </ul>
             </div>
           </div>
@@ -100,17 +101,15 @@
           <form class="p-5">
             <div class="row">
               <div class="col-md-6">
+
+                @foreach($form as $value)
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="name">
+                    <input type="{{ $value->type }}" class="form-control" placeholder="{{ $value->placeholder }}">
                   </div>
+                @endforeach
+
                   <div class="form-group">
-                    <input type="email" class="form-control" placeholder="email">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="subject">
-                  </div>
-                  <div class="form-group">
-                    <textarea class="form-control textarea" rows="4" placeholder="text" style="overflow:hidden;"></textarea>
+                    <textarea class="form-control textarea" rows="4" placeholder="Text" style="overflow:hidden;"></textarea>
                   </div>
 
               </div>
@@ -126,14 +125,12 @@
 
           <div class="xbox">
             <p class="jk">Sign up for newsletter:</p>
-          <input type="checkbox" id="checkbox" name="smh">
-          <label for="checkbox" class="d-block">recieve dogs</label>
-          <input type="checkbox" id="checkbox1" name="smh">
-          <label for="checkbox1" class="d-block">recieve cats</label>
-          <input type="checkbox" id="checkbox2" name="smh">
-          <label for="checkbox2" class="d-block">recieve zebras</label>
-          <input type="checkbox" id="checkbox3" name="smh">
-          <label for="checkbox3" class="d-block">recieve vampires</label>
+              @foreach($animal as $value)
+                <input type="checkbox" id="checkbox{{ $value->id }}" name="smh">
+                <label for="checkbox{{ $value->id }}" class="d-block">{{ $value->title }}</label>
+              @endforeach
+
+
           </div>
           
               </div>
