@@ -98,7 +98,7 @@
           </div>
           <div class="col-md-8">
             <h2 class="text-uppercase jk pt-5">get in touch</h2>
-          <form class="p-5">
+          <form class="p-5" action="{{ url('/') }}" method="POST">
             <div class="row">
               <div class="col-md-6">
 
@@ -109,7 +109,7 @@
                 @endforeach
 
                   <div class="form-group">
-                    <textarea class="form-control textarea" rows="4" placeholder="Text" style="overflow:hidden;"></textarea>
+                    <textarea class="form-control textarea" rows="4" placeholder="Text" name="textarea" style="overflow:hidden;"></textarea>
                   </div>
 
               </div>
@@ -151,7 +151,7 @@
           <hr class="w-100">
           <div class="col-8 offset-2 col-md-10 offset-md-1">
             <p class="d-inline">&copy; copyright 2017</p>
-            <p class="d-inline float-right">created by:Temo chkhaidze <span>&amp;Tamar mekhrishvili</span></p>
+            <p class="d-inline float-right">created by: Temo chkhaidze <span>&amp; Tamar mekhrishvili</span></p>
           </div>
         </div>
       </div>

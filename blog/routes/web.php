@@ -13,6 +13,8 @@
 
 Route::get('/', 'Maincontroller@showController');
 
+Route::post('/', 'Maincontroller@postController');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
