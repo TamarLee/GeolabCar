@@ -98,7 +98,7 @@
           </div>
           <div class="col-md-8">
             <h2 class="text-uppercase jk pt-5">get in touch</h2>
-          <form class="p-5" action="{{ url('/') }}" method="POST">
+          <form class="p-5" action="email" method="GET">
             {{ csrf_field() }}
             <div class="row">
               <div class="col-md-6">
