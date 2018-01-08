@@ -13,11 +13,12 @@
     <title>CARS</title>
   </head>
   <body>
-        <img src="img/circle.png"  id="c1" class="rellax" data-rellax-speed="5" data-rellax-zindex="1080">
+        <img src="img/circle.png"  id="c1" class="rellax" data-rellax-speed="7" data-rellax-zindex="1080">
         <img src="img/circle2.png" id="c2"  class="rellax" data-rellax-speed="-6" data-rellax-zindex="1080">
-        <img src="img/circle3.png" id="c3"  class="rellax" data-rellax-speed="-2" data-rellax-zindex="1080">
-        <img src="img/circle4.png" id="c4"  class="rellax" data-rellax-speed="-1" data-rellax-zindex="1080">
-        <img src="img/circle4.png" id="c5"  class="rellax" data-rellax-speed="-5" data-rellax-zindex="1080">
+        <img src="img/circle3.png" id="c3"  class="rellax" data-rellax-speed="-4" data-rellax-zindex="1080">
+        <img src="img/circle4.png" id="c4"  class="rellax" data-rellax-speed="-3" data-rellax-zindex="1080">
+        <img src="img/circle4.png" id="c5"  class="rellax" data-rellax-speed="-6" data-rellax-zindex="1080">
+        <img src="img/circle.png"  id="c6" class="rellax" data-rellax-speed="-8" data-rellax-zindex="1080">
     <a id="menu-toggle" href="" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
     <div id="sidebar-wrapper">
             <a id="menu-close" href="" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
@@ -30,17 +31,33 @@
     <div class="" id="home">
       <div id="main-slider" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
+          <!-- @foreach ($slider as  $value)
           <div class="carousel-item active">
-            @foreach ($slider as  $value)
+            
             <img src="{{$value->image}}" class="d-block img-fluid" alt="wq">
 
             <div class="carousel-caption d-none d-md-block">
               <h3 class="text-uppercase">{{$value->date}}</h3>
               <p class="">{{$value->description}}</p>
             </div>
-            @endforeach
+            
           </div>
-
+          @endforeach -->
+          <div class="carousel-item active">
+            <img src="img/slide_04.jpg" class="d-block img-fluid" alt="wq">
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="text-uppercase">27.11.</h3>
+              <p class="">Vintage Auto Exhibition</p>
+            </div>
+          </div>
+          
+          <div class="carousel-item">
+            <img src="img/slide_04.jpg" class="d-block img-fluid" alt="wq">
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="text-uppercase">27.11.</h3>
+              <p class="">Vintage Auto Exhibition</p>
+            </div>
+          </div>
         </div>
         <a href="#main-slider" class="carousel-control-prev" data-slide="prev">
           <span class="arrow"><img src="img/leftt.png"></span>
@@ -83,11 +100,11 @@
     </section>
     <div class="row">
       <div class="col-8 offset-2 col-md-10 offset-md-1 map-info">
-        <div class="row">
+        <div class="row xd">
           <div class="col-md-4 lmao">
             <h3 class="text-uppercase jk pt-5">contact information</h3>
             <div class="socials text-center">
-            <h3 class="jk text-center">click to <section class="d-block">view</section></h3>
+            <h3 class="jk text-center">click to <span class="d-block">view</span></h3>
               <ul class="">
                 @foreach($social as $value)
                   <li><a href="{{ $value->link }}" class="{{ $value->title }}">
@@ -96,7 +113,7 @@
             </ul>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-lg-8 col-md-12">
             <h2 class="text-uppercase jk pt-5">get in touch</h2>
           <form class="p-5" action="email" method="GET">
             {{ csrf_field() }}
@@ -137,7 +154,7 @@
           
               </div>
             </div>
-            <inut type="submit" class="btn btn-primary btn-black float-right mb-4">send</input>
+            <button type="submit" class="btn btn-primary btn-black float-right mb-4">send</button>
         </form>
           </div>
         </div>

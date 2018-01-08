@@ -1,5 +1,6 @@
 body{
 	background-color: #fafafa;
+	font-family: 'RobotoCondensed', sans-serif;
 }
 h2{
 	color: #000;
@@ -21,9 +22,6 @@ h3 span{
 }
 
 /* Side Menu */
-.redColor {
-	color: red;
-}
 .rellax{
 	position: absolute;
 	z-index: 1001;
@@ -47,6 +45,10 @@ h3 span{
 #c5{
 	top: 42%;
 	left: 60%;
+}
+#c6{
+	top: 12%;
+	left: 80%;
 }
 #sidebar-wrapper {
   margin-right: -250px;
@@ -137,6 +139,11 @@ a.navbar-brand{
   font-weight: 900;
   z-index: 1000;
 }
+.red{
+	color: red;
+	font-size: 2rem;
+}
+
 
 /*social*/
 .socials{
@@ -255,6 +262,19 @@ a.navbar-brand{
 .lmao{
 	background-color: #EBE8DE;
 }
+@media screen and (max-width: 992px) {
+    .lmao{
+    	display: none;
+    }
+    .jk{
+    	text-align: center;
+    	/*font-size: 3rem;*/
+	}
+	.xd{
+    	background-color: #EBE8DE;
+	}
+}
+
 /*.form-group input[type=text] {
     width: 100%;
     padding: 12px 20px;
